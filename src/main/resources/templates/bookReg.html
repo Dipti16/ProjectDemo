@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BoookMs</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
+    <link rel="stylesheet" href="/assets/css/-Login-form-Page-BS4--Login-form-Page-BS4.css">
+    <link rel="stylesheet" href="/assets/css/Contact-Form-by-Moorcam.css">
+    <link rel="stylesheet" href="/assets/css/Navbar-With-Button-icons.css">
+    <link rel="stylesheet" href="/assets/css/Pretty-Registration-Form-.css">
+    <script src="/assets/bootstrap/js/sweetalert.min.js"></script>
+    <script src="/assets/bootstrap/js/registration.js"></script>
+</head>
+
+
+<body style="margin: 15px;">
+<script th:inline="javascript">
+        var status = [[${status}]]
+
+        if(status == 1)
+        {
+            swal("Done", " Registration", "success");
+        }
+        else if(status==0)
+        {
+            swal("Sorry", "Registration Failed", "error");
+        }
+        else if(status==2)
+        {
+            swal("Done", " Deleted Successfully", "info");
+        }
+        else if(status==3)
+        {
+            swal("Sorry", "Some problem occured while deleting. Please try again later.", "error");
+        }
+    </script>
+<div th:replace="fragment.html :: navBar"></div>
+
+    <div style="text-align: center;font-size: 30px;font-weight: bold;font-style: italic;box-shadow: 0px 0px;text-shadow: 5px 5px 20px;"><label class="form-label" style="background: var(--bs-warning); margin-top:30px;">Book Registration&nbsp;&nbsp;</label>
+        <div>
+            <div class="modal fade" role="dialog" tabindex="-1" id="form-modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" style="text-shadow: 0px 0px;">Register!!!</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <section class="shadow contact-clean" style="background: rgb(3,77,139);">
+                                <form th:object="${Book}" class="bg-light border rounded border-secondary shadow-lg" th:action="@{/save}"method="post" style="background: rgb(248,248,249);">
+                                    <div class="form-group mb-3"><input class="form-control" type="text" name="author" placeholder="Enter the author" required=""></div>
+                                    <div class="form-group mb-3"><input class="form-control" type="text" name="name" placeholder="Enter the name" required=""></div>
+                                    <div class="form-group mb-3"><input class="form-control" type="text" name="price" placeholder="Enter the price" inputmode="numeric" required=""></div>
+                                    <div class="text-end form-group mb-3"><button class="btn btn-danger" type="reset">Clear</button><button class="btn btn-success" type="submit">SUbmit</button></div>
+                                </form>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-start" style="text-align: center;"><button class="btn btn-primary" type="button" style="text-align: left;padding-right: 50px;background: var(--bs-btn-active-border-color);color: var(--bs-yellow);" data-bs-target="#form-modal" data-bs-toggle="modal">ADD<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-hand-index-thumb" style="background: var(--bs-black);">
+                    <path d="M6.75 1a.75.75 0 0 1 .75.75V8a.5.5 0 0 0 1 0V5.467l.086-.004c.317-.012.637-.008.816.027.134.027.294.096.448.182.077.042.15.147.15.314V8a.5.5 0 0 0 1 0V6.435l.106-.01c.316-.024.584-.01.708.04.118.046.3.207.486.43.081.096.15.19.2.259V8.5a.5.5 0 1 0 1 0v-1h.342a1 1 0 0 1 .995 1.1l-.271 2.715a2.5 2.5 0 0 1-.317.991l-1.395 2.442a.5.5 0 0 1-.434.252H6.118a.5.5 0 0 1-.447-.276l-1.232-2.465-2.512-4.185a.517.517 0 0 1 .809-.631l2.41 2.41A.5.5 0 0 0 6 9.5V1.75A.75.75 0 0 1 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.271-2.715a2 2 0 0 0-1.99-2.199h-.581a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.632 2.632 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z"></path>
+                </svg></button></div>
+    </div>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

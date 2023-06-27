@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="navBar">
+<nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button" style="height: 80px;background-color: #37434d;color: #ffffff;">
+  <div class="container-fluid"><a class="navbar-brand" href="#" style="color: var(--bs-warning);"><i class="fa fa-book"></i> BooK Library</a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <div id="navcol-1" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" style="color: #ffffff;" href=""><i class="fa fa-home"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: var(--bs-white);" href="/home/"><i class="fa fa-registered"></i> Register</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: #ffffff;" href="#"><i class="fa fa-star-o"></i> My Account</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: #ffffff;" href="#"><i class="fa fa-user-circle-o"></i> Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link active" style="color: #ffffff;" href="#"><i class="fa fa-sign-in"></i>Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+
+</body>
+</html>
